@@ -1,0 +1,383 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		547A14502D91B2940055A655 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 547A144A2D91B2940055A655 /* Assets.xcassets */; };
+		547A14512D91B2940055A655 /* Big_Files_MapApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547A144C2D91B2940055A655 /* Big_Files_MapApp.swift */; };
+		547A14522D91B2940055A655 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547A144D2D91B2940055A655 /* ContentView.swift */; };
+		547A14532D91B2940055A655 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547A144E2D91B2940055A655 /* Item.swift */; };
+		547A14562D91B29D0055A655 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 547A14542D91B29D0055A655 /* Preview Assets.xcassets */; };
+		547A14622D91B69F0055A655 /* TreeMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547A145C2D91B69F0055A655 /* TreeMapViewModel.swift */; };
+		547A14632D91B69F0055A655 /* TreeMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547A14602D91B69F0055A655 /* TreeMapView.swift */; };
+		547A14642D91B69F0055A655 /* MetadataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547A145E2D91B69F0055A655 /* MetadataView.swift */; };
+		547A14652D91B69F0055A655 /* FileNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547A14582D91B69F0055A655 /* FileNode.swift */; };
+		547A14662D91B69F0055A655 /* SidebarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547A145F2D91B69F0055A655 /* SidebarView.swift */; };
+		547A14672D91B69F0055A655 /* ScanRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547A145A2D91B69F0055A655 /* ScanRecord.swift */; };
+		547A14682D91B69F0055A655 /* FileScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547A14592D91B69F0055A655 /* FileScanner.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		547A144A2D91B2940055A655 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		547A144B2D91B2940055A655 /* Big_Files_Map.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Big_Files_Map.entitlements; sourceTree = "<group>"; };
+		547A144C2D91B2940055A655 /* Big_Files_MapApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Big_Files_MapApp.swift; sourceTree = "<group>"; };
+		547A144D2D91B2940055A655 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		547A144E2D91B2940055A655 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		547A14542D91B29D0055A655 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		547A14572D91B3120055A655 /* Big Files Map.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Big Files Map.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		547A14582D91B69F0055A655 /* FileNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileNode.swift; sourceTree = "<group>"; };
+		547A14592D91B69F0055A655 /* FileScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileScanner.swift; sourceTree = "<group>"; };
+		547A145A2D91B69F0055A655 /* ScanRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanRecord.swift; sourceTree = "<group>"; };
+		547A145C2D91B69F0055A655 /* TreeMapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeMapViewModel.swift; sourceTree = "<group>"; };
+		547A145E2D91B69F0055A655 /* MetadataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetadataView.swift; sourceTree = "<group>"; };
+		547A145F2D91B69F0055A655 /* SidebarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarView.swift; sourceTree = "<group>"; };
+		547A14602D91B69F0055A655 /* TreeMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeMapView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		547A14312D91B2800055A655 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		547A142B2D91B2800055A655 = {
+			isa = PBXGroup;
+			children = (
+				547A144A2D91B2940055A655 /* Assets.xcassets */,
+				547A144B2D91B2940055A655 /* Big_Files_Map.entitlements */,
+				547A144C2D91B2940055A655 /* Big_Files_MapApp.swift */,
+				547A144D2D91B2940055A655 /* ContentView.swift */,
+				547A145B2D91B69F0055A655 /* Models */,
+				547A145D2D91B69F0055A655 /* ViewModels */,
+				547A14612D91B69F0055A655 /* Views */,
+				547A144E2D91B2940055A655 /* Item.swift */,
+				547A14542D91B29D0055A655 /* Preview Assets.xcassets */,
+				547A14572D91B3120055A655 /* Big Files Map.app */,
+			);
+			sourceTree = "<group>";
+		};
+		547A145B2D91B69F0055A655 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				547A14582D91B69F0055A655 /* FileNode.swift */,
+				547A14592D91B69F0055A655 /* FileScanner.swift */,
+				547A145A2D91B69F0055A655 /* ScanRecord.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		547A145D2D91B69F0055A655 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				547A145C2D91B69F0055A655 /* TreeMapViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		547A14612D91B69F0055A655 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				547A145E2D91B69F0055A655 /* MetadataView.swift */,
+				547A145F2D91B69F0055A655 /* SidebarView.swift */,
+				547A14602D91B69F0055A655 /* TreeMapView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		547A14332D91B2800055A655 /* Big Files Map */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 547A14452D91B2820055A655 /* Build configuration list for PBXNativeTarget "Big Files Map" */;
+			buildPhases = (
+				547A14302D91B2800055A655 /* Sources */,
+				547A14312D91B2800055A655 /* Frameworks */,
+				547A14322D91B2800055A655 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Big Files Map";
+			packageProductDependencies = (
+			);
+			productName = "Big Files Map";
+			productReference = 547A14572D91B3120055A655 /* Big Files Map.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		547A142C2D91B2800055A655 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1620;
+				LastUpgradeCheck = 1620;
+				TargetAttributes = {
+					547A14332D91B2800055A655 = {
+						CreatedOnToolsVersion = 16.2;
+					};
+				};
+			};
+			buildConfigurationList = 547A142F2D91B2800055A655 /* Build configuration list for PBXProject "Big Files Map" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 547A142B2D91B2800055A655;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 547A142B2D91B2800055A655;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				547A14332D91B2800055A655 /* Big Files Map */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		547A14322D91B2800055A655 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				547A14562D91B29D0055A655 /* Preview Assets.xcassets in Resources */,
+				547A14502D91B2940055A655 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		547A14302D91B2800055A655 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				547A14512D91B2940055A655 /* Big_Files_MapApp.swift in Sources */,
+				547A14522D91B2940055A655 /* ContentView.swift in Sources */,
+				547A14622D91B69F0055A655 /* TreeMapViewModel.swift in Sources */,
+				547A14632D91B69F0055A655 /* TreeMapView.swift in Sources */,
+				547A14642D91B69F0055A655 /* MetadataView.swift in Sources */,
+				547A14652D91B69F0055A655 /* FileNode.swift in Sources */,
+				547A14662D91B69F0055A655 /* SidebarView.swift in Sources */,
+				547A14672D91B69F0055A655 /* ScanRecord.swift in Sources */,
+				547A14682D91B69F0055A655 /* FileScanner.swift in Sources */,
+				547A14532D91B2940055A655 /* Item.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		547A14432D91B2820055A655 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		547A14442D91B2820055A655 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		547A14462D91B2820055A655 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Big_Files_Map.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = 64H4N973WP;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "ValiQ-Security.Big-Files-Map";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		547A14472D91B2820055A655 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Big_Files_Map.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = 64H4N973WP;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "ValiQ-Security.Big-Files-Map";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		547A142F2D91B2800055A655 /* Build configuration list for PBXProject "Big Files Map" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				547A14432D91B2820055A655 /* Debug */,
+				547A14442D91B2820055A655 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		547A14452D91B2820055A655 /* Build configuration list for PBXNativeTarget "Big Files Map" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				547A14462D91B2820055A655 /* Debug */,
+				547A14472D91B2820055A655 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 547A142C2D91B2800055A655 /* Project object */;
+}
