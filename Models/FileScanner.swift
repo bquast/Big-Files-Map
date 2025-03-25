@@ -20,14 +20,11 @@ class FileScanner {
         }
     }
     
-    private let fileManager = FileManager.default
-    
     func selectAndScanDirectory() async throws -> FileNode {
-        // Get directory URL on the main thread
         let url = try await selectDirectory()
-        // Now scan the directory
-        return try await Task.detached { [url] in
-            try await self.scanDirectory(at: url)
+        // Create a new scanner task with its own FileManager instance
+        return try await Task.detached {
+            try await Self.scanDirectory(at: url)
         }.value
     }
     
@@ -50,9 +47,12 @@ class FileScanner {
         return url
     }
     
-    // Move scanning to a non-actor-isolated context
-    nonisolated
+    // Make this a static method so it doesn't need access to instance properties
+    static nonisolated
     func scanDirectory(at url: URL) async throws -> FileNode {
+        // Create a new FileManager instance for this task
+        let fileManager = FileManager()
+        
         var isDirectory: ObjCBool = false
         guard fileManager.fileExists(atPath: url.path, isDirectory: &isDirectory) else {
             throw ScannerError.accessDenied
@@ -85,13 +85,18 @@ class FileScanner {
                 options: [.skipsHiddenFiles]
             )
             
-            for childURL in contents {
-                do {
-                    let childNode = try await scanDirectory(at: childURL)
+            // Use TaskGroup for concurrent directory scanning
+            try await withThrowingTaskGroup(of: FileNode.self) { group in
+                for childURL in contents {
+                    group.addTask {
+                        try await Self.scanDirectory(at: childURL)
+                    }
+                }
+                
+                // Collect results
+                for try await childNode in group {
                     children.append(childNode)
                     totalSize += childNode.size
-                } catch {
-                    print("Skipping \(childURL): \(error.localizedDescription)")
                 }
             }
             
