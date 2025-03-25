@@ -118,48 +118,58 @@ struct TreeMapLayout: View {
         var remainingNodes = nodes
         
         while !remainingNodes.isEmpty {
-            // Determine layout direction
             let isWide = currentRect.width >= currentRect.height
             
-            // Get next row/column of rectangles
-            let (rowNodes, _) = findOptimalRow(  // Use _ to ignore optimizedRatio
+            // Calculate how many nodes should go in this row/column
+            let (rowNodes, _) = findOptimalRow(
                 in: remainingNodes,
                 for: currentRect,
                 isWide: isWide,
                 totalSize: totalSize
             )
             
-            // Calculate rects for this row/column
-            let rowRects = layoutRow(
-                nodes: rowNodes,
-                in: currentRect,
-                isWide: isWide,
-                totalSize: totalSize
-            )
+            let rowSize = rowNodes.reduce(UInt64(0)) { $0 + $1.size }
+            let rowRatio = CGFloat(rowSize) / CGFloat(totalSize)
             
-            result.append(contentsOf: rowRects)
-            
-            // Update remaining nodes
-            remainingNodes.removeFirst(rowNodes.count)
-            
-            // Update the remaining rectangle
+            // Calculate the size of this row/column
             if isWide {
+                let rowHeight = currentRect.height
+                let rowWidth = currentRect.width * rowRatio
+                
+                var x = currentRect.minX
+                for node in rowNodes {
+                    let nodeWidth = rowWidth * (CGFloat(node.size) / CGFloat(rowSize))
+                    result.append(CGRect(x: x, y: currentRect.minY, width: nodeWidth, height: rowHeight))
+                    x += nodeWidth
+                }
+                
                 currentRect = CGRect(
                     x: currentRect.minX,
-                    y: currentRect.minY + rowRects[0].height,
+                    y: currentRect.minY + rowHeight,
                     width: currentRect.width,
-                    height: currentRect.height - rowRects[0].height
+                    height: currentRect.height - rowHeight
                 )
             } else {
+                let columnWidth = currentRect.width
+                let columnHeight = currentRect.height * rowRatio
+                
+                var y = currentRect.minY
+                for node in rowNodes {
+                    let nodeHeight = columnHeight * (CGFloat(node.size) / CGFloat(rowSize))
+                    result.append(CGRect(x: currentRect.minX, y: y, width: columnWidth, height: nodeHeight))
+                    y += nodeHeight
+                }
+                
                 currentRect = CGRect(
-                    x: currentRect.minX + rowRects[0].width,
+                    x: currentRect.minX + columnWidth,
                     y: currentRect.minY,
-                    width: currentRect.width - rowRects[0].width,
+                    width: currentRect.width - columnWidth,
                     height: currentRect.height
                 )
             }
             
-            // If we have an empty or too small rect, break
+            remainingNodes.removeFirst(rowNodes.count)
+            
             if currentRect.width < 1 || currentRect.height < 1 {
                 break
             }

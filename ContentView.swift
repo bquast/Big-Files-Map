@@ -30,7 +30,7 @@ struct ContentView: View {
                                 await viewModel.startScan()
                             }
                         }) {
-                            Label("Refresh", systemImage: "arrow.clockwise")
+                            Label("Select Directory", systemImage: "folder.badge.plus")
                         }
                         .disabled(viewModel.isScanning)
                     }

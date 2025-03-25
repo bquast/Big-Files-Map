@@ -24,21 +24,20 @@ class TreeMapViewModel: ObservableObject {
         error = nil
         
         do {
-            let homeNode = try await scanner.scanHomeDirectory()
-            rootNode = homeNode
-            
-            // If we have a last viewed path, navigate to it
-            if let lastPath = await retrieveLastPath(), let rootNode = rootNode {
-                navigateToSavedPath(lastPath, from: rootNode)
-            } else {
-                currentNode = homeNode
-            }
+            let rootNode = try await scanner.selectAndScanDirectory()
+            self.rootNode = rootNode
+            currentNode = rootNode
+            navigationPath = []
             
             // Save scan record
-            saveScanRecord(size: homeNode.size)
+            saveScanRecord(size: rootNode.size)
             
+        } catch FileScanner.ScannerError.noDirectorySelected {
+            // User cancelled directory selection - just reset the scanning state
+            isScanning = false
+            return
         } catch {
-            self.error = "Failed to scan: \(error.localizedDescription)"
+            self.error = error.localizedDescription
         }
         
         isScanning = false
@@ -64,18 +63,21 @@ class TreeMapViewModel: ObservableObject {
     }
     
     func zoomOut() {
-        guard !navigationPath.isEmpty else { return }
-        currentNode = navigationPath.removeLast()
-        if let currentNode = currentNode {
-            saveLastViewedPath(currentNode.path.path)
+        guard !navigationPath.isEmpty else {
+            // If we're at root, try to go to home directory
+            Task {
+                await startScan()
+            }
+            return
         }
+        
+        currentNode = navigationPath.removeLast()
     }
     
     func resetToRoot() {
-        currentNode = rootNode
-        navigationPath = []
-        if let rootNode = rootNode {
-            saveLastViewedPath(rootNode.path.path)
+        // Reset to home directory
+        Task {
+            await startScan()
         }
     }
     
